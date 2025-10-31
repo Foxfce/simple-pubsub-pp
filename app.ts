@@ -11,7 +11,9 @@ interface ISubscriber {
 interface IPublishSubscribeService {
   publish (event: IEvent): void;
   subscribe (type: string, handler: ISubscriber): void;
+
   // unsubscribe ( /* Question 2 - build this feature */ );
+  unsubscribe(type: string, handler: ISubscriber): void;
 }
 
 
@@ -52,6 +54,7 @@ class MachineSaleSubscriber implements ISubscriber {
   }
 
   handle(event: MachineSaleEvent): void {
+    // this.machines[2] still fixed with 2 need change later
     this.machines[2].stockLevel -= event.getSoldQuantity();
   }
 }
