@@ -102,12 +102,8 @@ const saleSubscriber = new MachineSaleSubscriber(machines);
 
 pubsub.subscribe("sale", saleSubscriber);
 
-const event : IEvent = {
-  type(): string,
-  machineId() : string;
-}
 
-console.log((pubsub.subscriber.sale)[0].handle();
+console.log((pubsub.subscriber.sale)[0]);
 
 pubsub.publish(new MachineSaleEvent(3, "Machine01"));
 
