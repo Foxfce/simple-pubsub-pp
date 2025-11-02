@@ -7,7 +7,7 @@ export interface Machine {
 }
 
 export type Events =
-    | { type: "MachineSold"; machineId: MachineId; qty: number }
+    { type: "MachineSold"; machineId: MachineId; qty: number }
     | { type: "MachineRefill"; machineId: MachineId; qty: number }
     | { type: "MachineWarning"; machineId: MachineId }
     | { type: "StockLevelSufficient"; machineId: MachineId }
